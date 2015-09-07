@@ -1,0 +1,18 @@
+<footer class="template-footer">
+
+	<div class="site-content  flex-container--footer">
+		<div class="flex-item">
+			{{widget('content', 'footer-text1', {
+				content: '<h3>Get in Touch</h3>'
+			})|raw}}
+			{{widget('profile', 'footer-social', { 'profileType':'socialicons'})|raw}}
+		</div>
+		<div class="flex-item">
+			{{widget('content', 'footer-text2', {
+				content: '<h3>Other Info</h3>'
+			})|raw}}
+			{{widget('profile', 'footer-copyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+		</div>
+	</div>
+
+</footer>

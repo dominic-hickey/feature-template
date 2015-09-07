@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>{{page.title}}</title>
+
+		<meta charset=utf-8>
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+
+		<!-- Favicon -->
+		{% include basekit.headScript %}
+    </head>
+
+	<body>
+
+		<!-- BEGIN WELCOME -->
+		<div class="section-main" id="top">
+			<div class="title">
+				<a href="#top" class="scroll title-img"><h1 class="text-logo">Video Background!</h1></a><!-- Text logo, uncomment to use -->
+				<h1>Welcome!</h1>
+			</div>
+		</div>
+		<!-- END WELCOME -->
+
+		<!-- Background Video container -->
+		<a id="bgndVideo" class="player"></a>
+
+		{% include basekit.bodyScript %}
+
+		<!-- JAVASCRIPT -->
+		<script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+
+			<!-- All set up / customisation variables for slideshow and video background etc. in custom.js file -->
+			<script type="text/javascript">
+				var slideshowBackgroundURLS = [
+					"{{asset('images/background1.jpg')}}",
+					"{{asset('images/background2.jpg')}}",
+					"{{asset('images/background3.jpg')}}",
+					"{{asset('images/background4.jpg')}}",
+				];
+
+				var slideshowFade = 1000;
+				var slideshowDuration = 4000;
+
+
+				// ==== VIDEO BACKGROUND ====
+				// Enable Video Background - 'on' to enable, 'off' to disable
+				// Cannot work on mobile devices due to device restrictions, instead shows slideshow
+				// If disabled slideshow is shown
+				// Paste YouTube URL into the videoBackgronudURL variable - use YouTube link NOT embed code
+				// Set videoMuted to 'true' and background videos will be muted with no toggle mute button visible
+				// Set videoMuted to 'false' and videos will not be muted, and the toggle mute button will be visible on the site so users can turn off audio if they want
+
+				var videoBackground = 'on';
+				var videoBackgroundURL = 'http://www.youtube.com/watch?v=RIQqVqQs9Xs';
+				var videoMuted = true;
+			</script>
+
+		<script type="text/javascript" src="{{asset('js/jquery.backstretch.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/jquery.mb.YTPlayer.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/smoothscroll.js')}}"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				if(videoBackground == 'on') {			
+				    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$(".player").hide();
+						$.backstretch(slideshowBackgroundURLS, {
+			    	    	fade: slideshowFade,
+			    	   		duration: slideshowDuration
+			    		});
+					}
+					else {
+						$(".player").mb_YTPlayer({
+							videoURL: videoBackgroundURL,
+							containment: 'body',
+							autoPlay: true,
+							mute: videoMuted,
+							startAt:0,
+							opacity:1
+						});
+						
+						if(videoMuted == false) {
+							$('.videoMuteButton').show();
+						}
+					}
+				}
+				else {
+					$.backstretch(slideshowBackgroundURLS, {
+			    	    fade: slideshowFade,
+			    	    duration: slideshowDuration
+			    	});
+				}
+			});
+		</script>
+    </body>
+</html>

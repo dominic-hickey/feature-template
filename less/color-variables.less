@@ -1,0 +1,207 @@
+// -----------------------------------------
+// Variable Template: LESS > Color Variables
+// -----------------------------------------
+
+// Custom
+// ----------
+
+@brand-color: @color-swatch3;
+
+
+// Site
+// ----------
+
+@site__bg-color:           @color-swatch1;
+@site__content-bg-color:   @color-swatch1;
+@site__border-color:       darken(@site__bg-color, 15%);
+@site__title-color:        @font-swatch10-color;
+
+
+// Layout
+// ----------
+
+@header__bg-color:       @site__bg-color;
+@header__border-color:   darken(@header__bg-color, 15%);
+
+@footer__bg-color:       @heading-color;
+@footer__border-color:   darken(@footer__bg-color, 15%);
+
+@sidebar__bg-color:      @heading-color;
+@sidebar__border-color:  darken(@sidebar__bg-color, 15%);
+
+
+// Typography / Buttons
+// --------------------
+
+// Headings
+@heading1-color:          @font-swatch1-color;
+@heading2-color:          @font-swatch2-color;
+@heading3-color:          @font-swatch3-color;
+@heading4-color:          @font-swatch4-color;
+@heading-color: 		  @font-swatch4-color;
+@paragraph-color:         @font-swatch5-color;
+
+// Links
+@link-color:              @color-swatch2;
+@link-color--hover:       darken(@link-color, 15%);
+
+// Buttons
+@button__bg-color: 		   @font-swatch7-background-color;
+@button__bg-color--hover:  @font-swatch7-background-color-hover;
+@button__text-color:       @font-swatch7-color;
+@button__border-color:     @font-swatch7-background-color;
+
+
+// Navigation
+// ----------
+
+@nav__bg-color: 			   @header__bg-color;
+@nav__list-bg-color: 		   @nav__bg-color;
+@nav__border-color:      	   darken(@nav__bg-color, 15%);
+
+@nav__text-color: 		       @font-swatch6-color;
+@nav__text-color--hover:       @font-swatch6-color-hover;
+@nav__text-color--selected:    @brand-color;
+
+@nav__item-bg-color: 	       @nav__bg-color;
+@nav__item-bg-color--selected: @brand-color;
+
+
+// Standard Widgets
+// ----------------
+
+// Feature
+@feature__bg-color: 			   @heading-color;
+@feature__overlay-color: 		   @heading-color;
+
+@feature__headline-color: 		   @font-swatch8-color;
+@feature__headline-bg-color: 	   @feature__overlay-color;
+@feature__strapline-color: 		   @font-swatch9-color;
+@feature__strapline-bg-color: 	   @feature__overlay-color;
+
+@feature__button-bg-color: 		   @button__bg-color;
+@feature__button-bg-color--hover:  @button__bg-color--hover;
+@feature__button-text-color:       @button__text-color;
+@feature__button-border-color:     @button__border-color;
+
+// Image
+@image__bg-color: 	  	    @site__content-bg-color;
+@image__overlay-bg-color:   @site__content-bg-color;
+@image__title-color: 	    @heading-color;
+@image__description-color:  @paragraph-color;
+
+// Gallery
+@gallery__bg-color: 		  @site__bg-color;
+@gallery__overlay-bg-color:   @site__bg-color;
+@gallery__title-color: 		  @heading-color;
+@gallery__description-color:  @paragraph-color;
+
+// Slideshow
+@slideshow__bg-color: 		   @site__content-bg-color;
+@slideshow__overlay-bg-color:  @site__content-bg-color;
+@slideshow__title-color:   	   @heading-color;
+@slideshow__description-color: @paragraph-color;
+
+@slideshow__pagination-item-bg-color:   		 @button__bg-color;
+@slideshow__pagination-item-bg-color--selected:  darken(@button__bg-color, 15%);
+@slideshow__pagination-text-color:      		 @button__text-color;
+
+// Twitter Feed
+@twitter__bg-color: 		  @site__content-bg-color;
+@twitter__item-bg-color:  	  @site__content-bg-color;
+@twitter__accountname-color:  @brand-color;
+
+// Forms
+@form-bg-color: 	     @site__content-bg-color;
+@form-legend-bg-color:   @site__content-bg-color;
+@form-legend-text-color: @heading-color;
+@form-label-text-color:  @paragraph-color;
+
+// Social Icons
+@social-icons__bg-color:  @brand-color;
+
+
+// Plugin Widgets
+// --------------
+
+// Blog
+// ----------
+
+// Blog Search
+@blogsearch__bg-color: 	         @site__content-bg-color;
+@blogsearch__legend-bg-color:    @site__content-bg-color;
+@blogsearch__legend-text-color:  @heading-color;
+@blogsearch__label-text-color:   @paragraph-color;
+
+// Blog Post List
+@blogpostlist__bg-color:  		  @site__content-bg-color;
+@blogpostlist__article-bg-color:  @site__content-bg-color;
+@blogpostlist__title-bg-color: 	  @site__content-bg-color;
+@blogpostlist__title-text-color:  @heading-color;
+
+// Blog Single Post
+@blogpost__bg-color:  		  @site__content-bg-color;
+@blogpost__article-bg-color:  @site__content-bg-color;
+@blogpost__title-bg-color: 	  @site__content-bg-color;
+@blogpost__title-text-color:  @heading-color;
+
+
+// Ecommerce
+// ----------
+
+// Ecommerce Product List
+@ecomproductslist__bg-color:  @site__content-bg-color;
+
+@ecomproductslist__filters-bg-color:  		   @site__content-bg-color;
+@ecomproductslist__filters-legend-bg-color:    @site__content-bg-color;
+@ecomproductslist__filters-legend-text-color:  @heading-color;
+@ecomproductslist__filters-label-text-color:   @paragraph-color;
+
+@ecomproductslist__product-list-bg-color:  	       @site__content-bg-color;
+@ecomproductslist__product-item-bg-color:  	       @site__content-bg-color;
+@ecomproductslist__product-item-title-bg-color:    @site__content-bg-color;
+@ecomproductslist__product-item-title-text-color:  @heading-color;
+
+// Ecommerce Single Product
+@ecomproduct__bg-color:  		         @site__content-bg-color;
+@ecomproduct__product-images-bg-color:   @site__content-bg-color;
+@ecomproduct__product-content-bg-color:  @site__content-bg-color;
+@ecomproduct__title-bg-color:    		 @site__content-bg-color;
+@ecomproduct__title-text-color:  		 @heading-color;
+@ecomproduct__price-bg-color:    		 @site__content-bg-color;
+@ecomproduct__price-text-color:  		 @brand-color;
+
+// Ecommerce Basket
+@ecombasket__bg-color:  	 		  @site__content-bg-color;
+@ecombasket__list-bg-color:  		  @site__content-bg-color;
+@ecombasket__button-bg-color: 		  @button__bg-color;
+@ecombasket__button-bg-color--hover:  @button__bg-color--hover;
+@ecombasket__button-text-color:       @button__text-color;
+@ecombasket__button-border-color:     @button__border-color;
+
+
+// Menu
+// ----------
+
+// Menu Navigation
+@menusections__bg-color: @site__content-bg-color;
+
+// Menu Sections
+@menu__bg-color:                   @site__content-bg-color;
+@menu__item-bg-color:              @site__content-bg-color;
+@menu__section-header-bg-color:    @site__content-bg-color;
+@menu__section-featured-bg-color:  @site__content-bg-color;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

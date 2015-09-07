@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--default">
+	<div class="site-container">
+
+		{% include "includes/header.twig" %}
+
+		<div class="page-title">
+			<div class="site-content">
+				{{ page.title }}
+			</div>
+		</div>
+
+		<div class="main">
+
+			<div class="site-content">
+				<div class="zone-content">
+					{{zone('main')|raw}}
+				</div>
+			</div>
+
+		</div>
+
+		{% include "includes/footer.twig" %}
+
+	</div>
+</div>
+
+{% endblock %}

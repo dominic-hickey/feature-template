@@ -1,0 +1,64 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--home">
+	<div class="site-container">
+
+		{% include "includes/header.twig" %}
+
+		{{widget('feature', 'feature', {
+		  'header': 'profile',
+		  'strapline': 'profile',
+		  'defaultBgImg': asset('images/feature-image.jpg'),
+		  'positionTopPercentage': '100',
+		  'showBtn': true,
+		  'buttonText': 'Button',
+		  'action': 'external',
+		  'url': 'http://docs.basekit.com',
+		  'target': '_blank'
+		})|raw}}
+
+		<div class="main">
+
+			<div class="site-content">
+				<div class="zone-content">
+					{{zone('main')|raw}}
+				</div>
+			</div>
+
+		</div>
+
+		{% include "includes/footer.twig" %}
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+	<script>
+
+		// Fixed position and fade out when scrolling
+		var scrollEffect = function (elem) {
+
+			// How high the window is
+			var window_height = window.innerHeight;
+
+			// Apply styles as user scrolls
+			elem.setAttribute(
+				"style", "opacity:" + Math.max(0, parseFloat(1-(1.8/window_height*window.pageYOffset)).toFixed(2)) + "; -webkit-transform: translateY(" + window.pageYOffset + "px)"
+			);
+
+		};
+
+		var elem = document.querySelector('.content-inner-wrap');
+
+		window.onscroll = function(e) {
+			scrollEffect(elem);
+		};
+
+	</script>
+
+{% endblock %}

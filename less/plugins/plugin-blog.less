@@ -1,0 +1,147 @@
+// ----------------------------------------
+// Variable Template: LESS > Plugins > Blog
+// ----------------------------------------
+
+// -----------------------------
+// Table Of Contents
+// -----------------------------
+
+//  #Blog Search
+//  #Blog Post List
+//  #Single Blog Post
+
+
+
+
+// -----------------------------
+// #Blog Search
+// -----------------------------
+
+// See 'stylesheet.less > #Forms' for basic styling
+
+.blogsearch {
+    background-color: @blogsearch__bg-color;
+
+    // Legend
+    .legend {
+        width: 100%;
+        background-color: @blogsearch__legend-bg-color;
+        color: @blogsearch__legend-text-color;
+    }
+
+    // Form Body
+    .form-body {
+
+    }
+
+    // Label
+    .label {
+        color: @blogsearch__label-text-color;
+    }
+}
+
+
+// ------------------------------
+// #Blog Post List
+// ------------------------------
+
+.blogpostlist {
+	background-color: @blogpostlist__bg-color;
+
+	// Image Link
+    .image-link {
+        display: block;
+        height: 350px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media @tablet {
+            height: 250px;
+        }
+    }
+
+    // Image
+    .image {
+        display: none;
+    }
+
+	// Post Article
+	.post-article {
+		background-color: @blogpostlist__article-bg-color;
+	}
+
+	// Post Content
+	.post-content {
+		margin: 20px 0 0;
+	}
+
+	// Post Footer
+	.post-footer {
+	}
+
+    // Post Title
+    .title-link {
+    	background-color: @blogpostlist__title-bg-color;
+    	color: @blogpostlist__title-text-color;
+    }
+
+    // Pagination
+    .pagination-list {
+    	display: flex;
+    	justify-content: space-between;
+    }
+
+}
+
+
+
+
+// ------------------------------
+// #Single Blog Post
+// ------------------------------
+
+.blogpost {
+	background-color: @blogpost__bg-color;
+
+	// Image Link
+    .image-link {
+        display: block;
+        height: 350px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media @tablet {
+            height: 250px;
+        }
+    }
+
+    // Image
+    .image {
+        display: none;
+    }
+
+	// Post Article
+	.post-article {
+        margin-bottom: 0;
+		background-color: @blogpost__article-bg-color;
+	}
+
+	// Post Content
+	.post-content {
+		margin: 20px 0 0;
+	}
+
+	// Post Footer
+	.post-footer {
+	}
+
+    // Post Title
+    .post-title {
+    	background-color: @blogpost__title-bg-color;
+    	color: @blogpost__title-text-color;
+    }
+}
+
+

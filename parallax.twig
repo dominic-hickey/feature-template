@@ -1,0 +1,59 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--parallax">
+	<div class="site-container">
+
+		<!-- Parallax Block -->
+		<div class="block  block--parallax" data-parallax="scroll" data-image-src="{{asset('images/parallax/parallax-image.jpg')}}">
+        	<div class="block-wrapper">
+				<h2 class="block-headline">Block One</h2>
+				<p class="block-strapline">Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+		<!-- Content Block -->
+		<div class="block  block--text">
+			<div class="block-wrapper">
+				<h2 class="block-headline">Block Two</h2>
+				<p class="block-strapline">Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+		<!-- Parallax Block -->
+		<div class="block  block--parallax" data-parallax="scroll" data-image-src="{{asset('images/parallax/parallax-image1.jpg')}}">
+        	<div class="block-wrapper">
+				<h2 class="block-headline">Block Three</h2>
+				<p class="block-strapline">Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+		<!-- Content Block -->
+		<div class="block  block--text">
+			<div class="block-wrapper">
+				<h2>Block Four</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut underline element labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco italicised element laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		</div>
+
+		<!-- Parallax Block -->
+		<div class="block  block--parallax" data-parallax="scroll" data-image-src="{{asset('images/parallax/parallax-image2.jpg')}}">
+        	<div class="block-wrapper">
+				<h2 class="block-headline">Block Five</h2>
+				<p class="block-strapline">Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Parallax Scripts -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="{{asset('js/parallax/parallax.js')}}"></script>
+
+{% endblock %}

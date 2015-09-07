@@ -1,0 +1,332 @@
+// -------------------------------------
+// Variable Template: LESS > Widgets
+// -------------------------------------
+
+// -----------------------------
+// Table Of Contents
+// -----------------------------
+
+//  #Logo
+//  #Company Name
+//  #Feature
+
+//  #Image
+//  #Gallery
+//  #Slideshow
+
+//  #Social Icons
+//  #Twitter Feed
+
+
+
+
+// -----------------------------
+// #Logo
+// -----------------------------
+
+.logo {
+    line-height: 0;
+    font-size: 0;
+}
+
+
+
+
+// -----------------------------
+// #Company Name
+// -----------------------------
+
+.companyname {
+    display: block;
+
+    @media @tablet {
+        margin-top: 20px;
+    }
+}
+
+// Company link
+.company-link:hover {
+    text-decoration: none;
+}
+
+
+
+
+// -----------------------------
+// #Feature
+// -----------------------------
+
+.feature {
+    position: relative;
+    z-index: 999;
+    background-color: @feature__bg-color;
+
+    .background-image {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; // Parallax effect
+    }
+    .content-wrap {
+        width: 100%;
+        height: 100%;
+    }
+    .content-inner-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+
+        height: 100%;
+    }
+    .headline {
+        color: @feature__headline-color;
+        text-transform: uppercase;
+
+        @media @tablet {
+            font-size: bkscale(@font-swatch8-font-size, 0.8);
+        }
+        @media @mobile {
+            font-size: bkscale(@font-swatch8-font-size, 0.65);
+            line-height: bkscale(@font-swatch8-line-height, 0.7);
+        }
+    }
+    .strapline {
+        margin: 20px 0;
+
+        @media @tablet {
+            font-size: bkscale(@font-swatch9-font-size, 0.8);
+        }
+        @media @mobile {
+            font-size: bkscale(@font-swatch9-font-size, 0.7);
+        }
+    }
+}
+
+.feature__content-wrap {
+    padding: 0;
+}
+
+
+
+
+// -----------------------------
+// #Image
+// -----------------------------
+
+// Image Title
+.image-title {
+    color: @image__title-color;
+}
+
+// Image Description
+.image-description {
+    color: @image__description-color;
+}
+
+
+
+// -----------------------------
+// #Gallery
+// -----------------------------
+
+.gallery {
+    background-color: @gallery__bg-color;
+
+    // Gallery List (3 column layout)
+    .gallery-list {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    // Figure
+    .figure {
+        position: relative;
+        perspective-origin: bottom;
+        perspective: 1000px;
+
+        &:hover .caption {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+
+    // Gallery Item
+    .gallery-item {
+        overflow: hidden;
+    }
+
+    // Image Link
+    .image-link {
+        display: block;
+        height: 280px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media @tablet {
+            height: 210px;
+        }
+    }
+
+    // Image
+    .image {
+        display: none;
+    }
+
+    // Captions
+    .caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 10px 15px;
+        opacity: 0;
+        transition: .5s;
+        background-color: fadeout(@gallery__overlay-bg-color, 50%);
+
+        transform: rotateX(90deg);
+        transform-origin: bottom;
+    }
+    .caption-link {
+        text-decoration: none;
+    }
+
+    // Image Title
+    .image-title {
+        color: @gallery__title-color;
+    }
+
+    // Image Description
+    .image-description {
+        color: @gallery__description-color;
+    }
+
+}
+
+
+
+
+// -----------------------------
+// #Slideshow
+// -----------------------------
+
+.responsiveslideshow {
+    background-color: @slideshow__bg-color;
+
+    // Image
+    .image {
+        display: none;
+    }
+
+    // Image Title
+    .image-title {
+        color: @slideshow__title-color;
+    }
+
+    // Image Description
+    .image-description {
+        color: @slideshow__description-color;
+    }
+
+    // Caption
+    .caption {
+        background-color: hsla(hue(@slideshow__overlay-bg-color), saturation(@slideshow__overlay-bg-color), lightness(@slideshow__overlay-bg-color), 0.6);
+    }
+
+    // Pagination
+    .pagination-item {
+        .button {
+            background-color: @slideshow__pagination-item-bg-color;
+            color: @slideshow__pagination-text-color;
+        }
+    }
+    // Selected
+    .pagination-item.selected .button {
+        background-color: @slideshow__pagination-item-bg-color--selected;
+    }
+
+}
+
+
+
+
+// -----------------------------
+// #Social Icons
+// -----------------------------
+
+.social-link {
+    color: @social-icons__bg-color;
+}
+
+
+
+
+// -----------------------------
+// #Twitter Feed
+// -----------------------------
+
+.twitter {
+    background-color: @twitter-bg-color;
+}
+
+// Tweet Item
+.tweet-item {
+    padding: @widget-spacing;
+    background-color: @twitter-item-bg-color;
+
+    // Avatar / Wrap
+    .avatar, .tweet-wrap {
+        display: inline-block;
+    }
+
+    // Twitter Avatar
+    .avatar {
+        margin-right: 20px;
+        vertical-align: top;
+    }
+
+    // Twitter Handle
+    .account-link {
+        display: block;
+        font-family: @font-swatch5-font-family;
+        font-size: @font-swatch5-font-size;
+        margin-bottom: 5px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .account-name {
+        color: @twitter-accountname-color;
+    }
+
+    // Tweet Text Content
+    .tweet-content {
+        font-size: bkscale(@font-swatch5-font-size, 0.95);
+        a {
+            color: @font-swatch4-color;
+            text-decoration: none;
+        }
+    }
+    // Twitter data
+    .tweet-metadata, .tweet-metadata a {
+        color: @font-swatch6-color;
+        font-size: bkscale(@font-swatch5-font-size, 0.9)
+    }
+    .tweet-metadata a {
+	    color: darken(@font-swatch6-color,20%);
+    }
+}
+
+
+
+

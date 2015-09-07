@@ -1,0 +1,377 @@
+// -------------------------------------
+// Feature Template: Stylesheet
+// -------------------------------------
+
+#tdk-toolbar {
+    display: none!important;
+}
+
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+//  # LESS Includes
+//  # Mixins
+//  # Site
+//  # Header
+//  # Footer
+//  # Navigation
+//  # Buttons
+//  # Forms
+
+
+// -----------------------------
+// 1. LESS Includes
+// -----------------------------
+
+
+// BK LESS Framework Include
+// -------------------------
+
+@import "@{templateCommon}/bk-less-framework.less";
+
+
+// Template Includes
+// -----------------
+
+@import "@{templateLocal}/less/widgets.less";           // Widgets
+@import "@{templateLocal}/less/color-variables.less";   // Variables
+@import "@{templateLocal}/less/custom-difm.less";       // Custom DIFM (Layouts)
+@import "@{templateLocal}/less/custom-features.less";   // Custom Features
+
+
+// Plugin Includes
+// ---------------
+
+@import "@{templateLocal}/less/plugins/plugin-blog.less";      // Plugin: Blog
+@import "@{templateLocal}/less/plugins/plugin-menu.less";      // Plugin: Menu
+@import "@{templateLocal}/less/plugins/plugin-ecommerce.less"; // Plugin: Ecommerce
+
+
+// Template Features
+// -----------------
+
+@import "@{templateLocal}/js/fullPage/jquery.fullPage.less";
+
+
+
+
+// -----------------------------
+// #Mixins
+// -----------------------------
+
+// Variable Media Queries
+@desktop: ~"only screen and (max-width: 1024px)";
+
+
+
+
+// -----------------------------
+// #Site
+// -----------------------------
+
+body {
+    background-color: @site__bg-color;
+}
+
+// Site Canvas
+.site-content {
+    position: relative;
+    display: block;
+    width: @site__content-width;
+    margin: 0 auto;
+}
+
+// Links
+a {
+    color: @link-color;
+
+    &:hover {
+        color: darken(@link-color, 15%);
+    }
+}
+
+
+// Layout
+// ----------
+
+.site-container {
+    max-width: @site__width;
+}
+
+// Main
+.main {
+    position: relative;
+    z-index: 7000;
+    background-color: @site__content-bg-color;
+    padding: @site__spacing 0;
+}
+
+
+// Inner Pages
+// -----------
+
+.page {
+    // height: 100%;
+}
+
+.page-title {
+    background-color: #f3f3f3;
+    padding: 10px 0;
+}
+
+.page--default {
+    .template-header {
+        position: relative!important;
+
+        .header-color .light!important;
+
+        .company-link {
+            color: @heading-color;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// #Header
+// -----------------------------
+
+.template-header {
+    position: relative;
+    z-index: 8001;
+    width: 100%;
+    max-width: 100%;
+    padding: @header__spacing 0;
+
+    @media @tablet {
+        padding-bottom: 0!important;
+        margin-bottom: 0;
+    }
+
+    .flex-container {
+        align-items: center;
+
+        @media @tablet {
+            .flex-item:first-child,
+            .flex-item:nth-child(2) {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// #Footer
+// -----------------------------
+
+.template-footer {
+    position: relative;
+    z-index: 2;
+    padding: @footer__spacing 0;
+
+    @media @mobile {
+        padding: @footer__spacing * 0.7 0;
+    }
+
+    h1, h2, h3, h4, p {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+// -----------------------------
+// #Navigation
+// -----------------------------
+
+
+// Template Navigation
+.template-navigation {
+    @media @tablet {
+        margin-top: 20px;
+        border-top: 1px solid @nav__border-color;
+    }
+}
+
+// Navigation List
+.navigation-list {
+    margin: 0;
+
+    @media @tablet {
+        display: none;
+        text-align: left;
+    }
+}
+.navigation-list.open {
+    display: block;
+}
+
+// Navigation Item
+.navigation-item {
+    display: inline-block;
+    vertical-align: middle;
+
+    @media @tablet {
+        display: block;
+
+        &:first-child {
+            padding-top: 10px;
+            border-top: 1px solid @nav__border-color;
+        }
+    }
+
+    .item-name {
+        padding-left: 30px;
+        color: @nav__text-color;
+        text-transform: uppercase;
+
+        @media @tablet {
+            padding-left: 0;
+        }
+
+        &:hover {
+            color: @nav__text-color--hover;
+        }
+
+        &.item-name--parent {
+            padding-right: 0;
+        }
+    }
+
+    &.selected .item-name {
+        color: @nav__text-color--selected;
+    }
+
+    &:last-child .item-name {
+        padding-right: 0;
+    }
+}
+
+// Dropdown Menu
+.navigation-item.folder .navigation-list {
+    position: absolute;
+    min-width: 150px;
+    background-color: @nav__list-bg-color;
+
+    .navigation-item {
+        display: block;
+        width: 100%;
+        background-color: @site__bg-color;
+    }
+    .navigation-item--child {
+        padding: 0 10px;
+
+        .item-name {
+            padding: 4px 10px;
+        }
+    }
+}
+// Folder arrow
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @nav__text-color;
+}
+
+// Toggle Button
+.navigation-toggle {
+    display: none;
+
+    @media @tablet {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        background-color: transparent;
+        color: @heading-color;
+        text-align: left;
+        text-transform: uppercase;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+
+    &:after {
+        content: "+";
+        position: absolute;
+        right: 0;
+    }
+}
+
+
+
+
+// -----------------------------
+// #Buttons
+// -----------------------------
+
+.button {
+    padding: 6px 16px
+}
+
+
+
+
+// -----------------------------
+// #Forms
+// -----------------------------
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line {
+    height: inherit!important;
+    padding: 9px 12px;
+
+    &:focus {
+        border-color: @brand-color;
+    }
+}
+
+// Contact, Sign Up Form
+.contactform,
+.signupform {
+    background-color: @form-bg-color;
+
+    // Legend
+    .legend {
+        width: 100%;
+        background-color: @form-legend-bg-color;
+        color: @form-legend-text-color;
+    }
+
+    // Form Body
+    .form-body {
+    }
+
+    // Label
+    .label {
+        color: @form-label-text-color;
+    }
+
+    // Input
+    .input:focus {
+        border-color: @brand-color;
+    }
+}
+
+
+
+
+
+
+
+
+

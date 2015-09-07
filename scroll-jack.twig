@@ -1,0 +1,123 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--scroll-jack">
+	<div class="site-container">
+
+		<!-- Scroll Jack Header -->
+		<header class="template-header  template-header--scroll-jack">
+			<div class="site-content  flex-container">
+				<div class="flex-item">
+					{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+				</div>
+				<div class="flex-item">
+					{{widget('companyname', 'companyname', {"business": "profile" })|raw}}
+				</div>
+				<div class="flex-item">
+					<nav class="template-navigation">
+						<ul id="scroll-jack-menu" class="navigation-list">
+							<li data-menuanchor="block-one" class="navigation-item">
+								<a href="#block-one" class="item-name">First</a>
+							</li>
+							<li data-menuanchor="block-two" class="navigation-item">
+								<a href="#block-two" class="item-name">Second</a>
+							</li>
+							<li data-menuanchor="block-three" class="navigation-item">
+								<a href="#block-three" class="item-name">Third</a>
+							</li>
+							<li data-menuanchor="block-four" class="navigation-item">
+								<a href="#block-four" class="item-name">Fourth</a>
+							</li>
+							<li data-menuanchor="block-five" class="navigation-item">
+								<a href="#block-five" class="item-name">Fifth</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- Scroll Jack Blocks -->
+		<div id="fullpage">
+
+			<!-- Block One -->
+			<div id="section0" class="block--scroll-jack  block--image  image--bakery">
+				<div class="block-background">
+					<div class="block-wrapper">
+						<h2>Block One</h2>
+						<p>Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Block Two -->
+			<div id="section1" class="block--scroll-jack  block--text">
+	        	<div class="block-wrapper">
+					<h2 class="block-headline">Block Two</h2>
+					<p class="block-strapline">Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+
+			<!-- Block Three -->
+			<div id="section2" class="block--scroll-jack  block--image  image--dishes">
+				<div class="block-background">
+					<div class="block-wrapper">
+						<h2>Block Three</h2>
+						<p>Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Block Four -->
+			<div id="section3" class="block--scroll-jack  block--text">
+	        	<div class="block-wrapper">
+					<h2 class="block-headline">Block Four</h2>
+					<p class="block-strapline">Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+
+			<!-- Block Five -->
+			<div id="section4" class="block--scroll-jack  block--image  image--steak">
+				<div class="block-background">
+					<div class="block-wrapper">
+						<h2>Block Five</h2>
+						<p>Duis aute irure dolor in a link reprehenderit in voluptate velit esse cillum bold text dolore eu fugiat nulla pariatur. Excepteur span element sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Scroll Jack Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="{{asset('js/fullPage/jquery.fullPage.js')}}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['block-one', 'block-two', 'block-three', 'block-four', 'block-five'],
+				menu: '#scroll-jack-menu',
+				scrollingSpeed: 800,
+				sectionSelector: '.block--scroll-jack',
+        		slideSelector: '.slide',
+        		navigation: true
+			});
+		});
+	</script>
+
+{% endblock %}
+
+
+
+
+
+
