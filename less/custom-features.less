@@ -60,13 +60,13 @@
 
 // Background Images
 .image--bakery {
-    background-image: image('/images/parallax/parallax-image.jpg');
+    background-image: image('/images/parallax-image.jpg');
 }
 .image--dishes {
-    background-image: image('/images/parallax/parallax-image1.jpg');
+    background-image: image('/images/parallax-image1.jpg');
 }
 .image--steak {
-    background-image: image('/images/parallax/parallax-image2.jpg');
+    background-image: image('/images/parallax-image2.jpg');
 }
 
 
@@ -104,6 +104,23 @@
 // #Fullscreen Video
 // -----------------------------
 
+.template-header--sticky {
+    background: darken(@site__bg-color, 4%);
+
+    // Active Sticky Header
+    &.sticky-active {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+}
+
+
+// -----------------------------
+// #Fullscreen Video
+// -----------------------------
+
 /* === GENERAL === */
 
 html, body {
@@ -111,16 +128,6 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-}
-
-body {
-    background-color: #5F6061;
-    font-family: 'Lato', sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-a {
-    color: inherit;
 }
 
 .backstretch:after {
@@ -144,60 +151,3 @@ a {
     text-align: center;
     color: rgba(233,233,233,0.8);
 }
-
-/* === WELCOME === */
-
-.section-main {
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    background-color: transparent;
-    display: block;
-    position: relative;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align:center;
-}
-
-.section-main .title {
-    color: rgba(236,240,241,0.9);
-}
-
-.section-main .title a.title-img {
-    display: block;
-    margin-bottom: 30px;
-}
-
-.section-main .title a.title-img img {
-    max-height: 40px;
-    outline: none;
-    border: none;
-}
-
-.section-main .title h1 {
-    display: inline-block;
-    color: #ecf0f1;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size:152px;
-    line-height:64px;
-    margin: 0px;
-}
-
-@media all and (max-width: 860px) {
-    .section-main .title h1 {
-        font-size:48px;
-        line-height:32px;
-    }
-}
-
-.section-main h1.text-logo {
-    font-family: 'Grand Hotel', cursive;
-    text-transform: none;
-    font-weight: 400;
-    font-size: 36px;
-    color: rgba(236,240,241,0.8);
-}
-

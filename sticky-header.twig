@@ -1,0 +1,87 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--home">
+	<div class="site-container">
+
+		{{widget('feature', 'feature', {
+		  'header': 'profile',
+		  'strapline': 'profile',
+		  'defaultBgImg': asset('images/parallax-image.jpg'),
+		  'positionTopPercentage': '100',
+		  'showBtn': true,
+		  'buttonText': 'Button',
+		  'action': 'external',
+		  'url': 'http://docs.basekit.com',
+		  'target': '_blank'
+		})|raw}}
+
+		<!-- Sticky Header -->
+		<header class="template-header  template-header--sticky">
+			<div class="site-content  flex-container">
+				<div class="flex-item">
+					{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+				</div>
+				<div class="flex-item">
+					{{widget('companyname', 'companyname', {"business": "profile" })|raw}}
+				</div>
+				<div class="flex-item">
+					<nav class="template-navigation">
+						{{widget('extendednavigation', 'header-nav', {"align":"right"})|raw}}
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<div class="main  main--sticky">
+
+			<div class="site-content">
+				<div class="zone-content">
+					{{zone('main')|raw}}
+				</div>
+			</div>
+
+		</div>
+
+		{% include "includes/footer.twig" %}
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Sticy Header Scripts -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+
+		// Sticks to top of page when hit
+		function stickyElement() {
+			var nav = $('.template-header--sticky');
+			var navPos = nav.offset().top;
+			var navHeight = nav.outerHeight();
+			var content = $('.main--sticky');
+
+		function makeItStick() {
+			if($(this).scrollTop() >= navPos) {
+				nav.addClass('sticky-active');
+				content.css('margin-top', navHeight); // To avoid content jumps
+			} else {
+				nav.removeClass('sticky-active');
+				content.css('margin-top', '0');
+			}
+		}
+
+		$(window).on('scroll', function() {
+			  makeItStick();
+		  });
+		}
+
+		stickyElement();
+
+	</script>
+
+{% endblock %}
