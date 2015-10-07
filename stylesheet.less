@@ -2,10 +2,6 @@
 // Feature Template: Stylesheet
 // -------------------------------------
 
-#tdk-toolbar {
-    // display: none!important;
-}
-
 // -----------------------------
 // Table of Contents
 // -----------------------------
@@ -36,8 +32,6 @@
 
 @import "@{templateLocal}/less/widgets.less";           // Widgets
 @import "@{templateLocal}/less/color-variables.less";   // Variables
-@import "@{templateLocal}/less/custom-difm.less";       // Custom DIFM (Layouts)
-@import "@{templateLocal}/less/custom-features.less";   // Custom Features
 @import "@{templateLocal}/js/owl-carousel/owl.carousel.less";
 
 
@@ -49,10 +43,14 @@
 @import "@{templateLocal}/less/plugins/plugin-ecommerce.less"; // Plugin: Ecommerce
 
 
-// Template Features
-// -----------------
+// DIFM Includes
+// -------------
 
-@import "@{templateLocal}/js/fullPage/jquery.fullPage.less";
+@import "@{templateLocal}/less/custom-difm.less";      // Custom DIFM (Layouts)
+@import "@{templateLocal}/less/custom-features.less";  // Custom Features
+
+@import "@{templateLocal}/js/fullPage/jquery.fullPage.less";  // Fullpage (Scroll Jack)
+@import "@{templateLocal}/js/owl-carousel/owl.carousel.less"; // Owl Carousel (Slider)
 
 
 

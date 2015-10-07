@@ -7,36 +7,66 @@
 
 		{% include "includes/header.twig" %}
 
+		{{widget('feature', 'feature', {
+		  'header': 'profile',
+		  'strapline': 'profile',
+		  'defaultBgImg': asset('images/parallax-image.jpg'),
+		  'positionTopPercentage': '100',
+		  'showBtn': true,
+		  'buttonText': 'Button',
+		  'action': 'external',
+		  'url': 'http://docs.basekit.com',
+		  'target': '_blank'
+		})|raw}}
+
 		<div class="main">
 			<div class="site-content">
 
 				<!-- Content Slider -->
 				<div class="owl-carousel">
 					<div class="slider-item">
-						Content<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 					<div class="slider-item">
-						<img class="owl-lazy" src="{{asset('images/slider-image.jpg')}}" alt="">
+						<a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" class="slider-item-link">
+							<img src="{{asset('images/slider-image.jpg')}}" alt="">
+						</a>
 					</div>
 				</div>
+
+				<p>Owl Carousel slider documentation <a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" target="_blank">here</a>.</p>
 
 			</div>
 		</div>
@@ -56,10 +86,19 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 	  		$('.owl-carousel').owlCarousel({
-			    items:4,
-			    lazyLoad:true,
-			    loop:true,
-			    margin:10
+			    loop: true,
+			    margin: 20,
+			    autoplay: true,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true,
+			    responsive:{
+			        0: {
+			            items: 2
+			        },
+			        768: {
+			            items: 5
+			        }
+			    }
 			});
 		});
 	</script>
