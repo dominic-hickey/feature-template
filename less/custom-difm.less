@@ -9,10 +9,11 @@
 // Site Options
 // ------------
 
-@site__width:         100%;   // Site width
-@site__content-width: 90%;    // Content width (wrapper)
-@site__spacing:       80px;   // Site spacing
-@widget__spacing:     30px;   // Widget spacing
+@value__site--width:         100%;   // Site width
+@value__site-content--width: 90%;    // Content width (wrapper)
+@value__site--spacing:       80px;   // Site spacing
+
+@value__widget--spacing:     30px;   // Widget spacing
 
 .site-container {
 
@@ -28,7 +29,7 @@
 // Header Options
 // --------------
 
-@header__spacing: 20px; // Header spacing
+@value__header--spacing: 20px; // Header spacing
 
 .template-header  {
 
@@ -47,7 +48,7 @@
 // Feature Options
 // ---------------
 
-@feature__overlay-opacity: 0.3; // Feature opacity
+@value__feature--opacity: 0.7; // Feature opacity
 
 .feature {
 
@@ -67,7 +68,7 @@
 	}
 
 	// Transparency (Options: .full-overlay, .type-overlay, .none)
-	.feature-transparency .full-overlay;
+	.feature-transparency .type-overlay;
 
 }
 
@@ -84,8 +85,8 @@
 // Footer Options
 // --------------
 
-@footer__spacing:         100px; // Footer spacing
-@footer__parallax-height: 700px; // Footer parallax image
+@value__footer--spacing:         100px; // Footer spacing
+@value__footer--parallax-height: 700px; // Footer parallax image
 
 .template-footer {
 
@@ -138,7 +139,7 @@
 		margin-right: auto;
 
 		.template-header {
-			padding-left: @site__spacing;
+			padding-left: @value__site--spacing;
 		}
 	}
 	.center {
@@ -148,7 +149,7 @@
 		margin-left: auto;
 
 		.main {
-			padding-right: @site__spacing;
+			padding-right: @value__site--spacing;
 		}
 	}
 
@@ -176,7 +177,7 @@
 
 			width: 20%;
 			height: 100vh;
-			padding: @site__spacing;
+			padding: @value__site--spacing;
 			box-shadow: 0 0 3px 4px rgba(110,110,110,0.1);
 			text-align: left;
 
@@ -184,7 +185,7 @@
 				position: relative;
 				width: 100%;
 				height: inherit;
-				padding: @header__spacing;
+				padding: @value__header--spacing;
 				box-shadow: inherit;
 			}
 
@@ -216,7 +217,7 @@
 			}
 		}
 		.template-navigation {
-			margin-top: @site__spacing;
+			margin-top: @value__site--spacing;
 
 			@media @desktop {
 				margin-top: 0;
@@ -274,7 +275,7 @@
 
 			width: 20%;
 			height: 100vh;
-			padding: @site__spacing;
+			padding: @value__site--spacing;
 			box-shadow: 0 0 3px 4px rgba(110,110,110,0.1);
 			text-align: right;
 
@@ -282,7 +283,7 @@
 				position: relative;
 				width: 100%;
 				height: inherit;
-				padding: @header__spacing;
+				padding: @value__header--spacing;
 				box-shadow: inherit;
 				text-align: left;
 			}
@@ -315,7 +316,7 @@
 			}
 		}
 		.template-navigation {
-			margin-top: @site__spacing;
+			margin-top: @value__site--spacing;
 
 			@media @desktop {
 				margin-top: 0;
@@ -379,16 +380,17 @@
 		z-index: 7000;
 		background-color: transparent!important;
 
+		.navigation-item .item-name,
 		.navigation-item .item-name:hover,
 		.navigation-item.selected .item-name {
-			color: @site__bg-color;
+			color: @color__body--background;
 		}
 		.navigation-item.folder .item-name:hover {
-			color: @heading-color;
+			color: @color__h1--text;
 		}
 
 		.company-link {
-			color: @site__bg-color;
+			color: @color__body--background;
 		}
 
 		.logo-image {
@@ -398,10 +400,10 @@
 		@media @tablet {
 
 			.navigation-toggle {
-				color: @site__bg-color;
+				color: @color__body--background;
 			}
 			.navigation-body {
-				background-color: @header__bg-color;
+				background-color: @color__header--background;
 			}
 			.navigation-list {
 				position: relative;
@@ -409,10 +411,10 @@
 			}
 			.navigation-item .item-name:hover,
 			.navigation-item.selected .item-name {
-				color: @heading-color;
+				color: @color__h1--text;
 			}
 			.navigation-item.folder .item-name:hover {
-				color: @heading-color;
+				color: @color__h1--text;
 			}
 		}
 	}
@@ -446,7 +448,7 @@
 		display: block;
 		text-align: center;
 		.navigation-list {
-			padding-top: @header__spacing;
+			padding-top: @value__header--spacing;
 			text-align: center;
 		}
 		.company-link {
@@ -479,63 +481,63 @@
 
 	// Light
 	.light {
-		background-color: @header__bg-color;
+		background-color: @color__header--background;
 
 		// Navigation
 		.navigation-item .item-name {
-		    color: @nav__text-color;
+		    color: @color__navigation--text;
 		    text-transform: uppercase;
 		}
 		.navigation-item.selected .item-name {
-		    color: @brand-color;
+		    color: @color__primary;
 		}
 	}
 
 	// Dark
 	.dark {
-		background-color: @heading-color!important;
+		background-color: @color__h1--text!important;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
 		.company-link {
-			color: @site__bg-color;
+			color: @color__body--background;
 		}
 
 		// Navigation
 		.template-navigation {
-			border-color: lighten(@heading-color, 15%);
+			border-color: lighten(@color__h1--text, 15%);
 		}
 		.navigation-item {
 
 			&:hover,
 			&.selected .item-name {
-				color: @brand-color;
+				color: @color__primary;
 			}
 			&:first-child {
 				@media @tablet {
-					border-color: lighten(@heading-color, 15%);
+					border-color: lighten(@color__h1--text, 15%);
 				}
 			}
 			&.folder .navigation-list {
-				background-color: darken(@heading-color, 10%);
+				background-color: darken(@color__h1--text, 10%);
 			}
 
 			.item-name {
-				color: darken(@site__bg-color, 30%);
+				color: darken(@color__body--background, 30%);
 
 				&:hover {
-					color: @site__bg-color;
+					color: @color__body--background;
 				}
 			}
 		}
 		.navigation-list--children .navigation-item .item-name:hover {
-			color: @heading-color;
+			color: @color__h1--text;
 		}
 		.item-name--parent:after {
-			border-top-color: darken(@site__bg-color, 30%);
+			border-top-color: darken(@color__body--background, 30%);
 		}
 		.navigation-toggle {
 			@media @tablet {
-				color: @site__bg-color;
+				color: @color__body--background;
 			}
 		}
 
@@ -624,14 +626,14 @@
 
 	.full-overlay {
 		.content-wrap {
-			background-color: hsla(hue(@feature__overlay-color), saturation(@feature__overlay-color), lightness(@feature__overlay-color), @feature__overlay-opacity);
+			background-color: hsla(hue(@color__feature-content--background), saturation(@color__feature-content--background), lightness(@color__feature-content--background), @value__feature--opacity);
 		}
 	}
 	.type-overlay {
 		.headline,
 		.strapline {
 			display: inline-block;
-			background-color: hsla(hue(@feature__overlay-color), saturation(@feature__overlay-color), lightness(@feature__overlay-color), @feature__overlay-opacity);
+			background-color: hsla(hue(@color__feature-content--background), saturation(@color__feature-content--background), lightness(@color__feature-content--background), @value__feature--opacity);
 		}
 		.headline {
 			padding: 14px 20px;
@@ -704,17 +706,17 @@
 .footer-color {
 
 	.light {
-		background-color: @site__bg-color;
+		background-color: @color__body--background;
 	}
 	.dark {
-		background-color: @footer__bg-color;
-		border-top: 4px solid @footer__border-color;
+		background-color: @color__footer--background;
+		border-top: 4px solid @color__footer--border;
 
 		h1, h2, h3, h4 {
-			color: @site__bg-color;
+			color: @color__body--background;
 		}
 		p {
-			color: darken(@site__bg-color, 30%);
+			color: darken(@color__body--background, 30%);
 		}
 	}
 
@@ -767,21 +769,21 @@
 .button-type {
 
 	.solid {
-		background-color: @button__bg-color;
+		background-color: @color__button--background;
 
 		&:hover {
-			background-color: @button__bg-color--hover;
-			color: @button__text-color;
+			background-color: @color__button--background--hover;
+			color: @color__button--text;
 		}
 	}
 	.transparent {
 		background-color: transparent;
-		border: 2px solid @button__border-color;
-		color: @button__border-color;
+		border: 2px solid @color__button--border;
+		color: @color__button--border;
 
 		&:hover {
 			background-color: transparent!important;
-			color: @button__border-color;
+			color: @color__button--border;
 		}
 	}
 

@@ -8,7 +8,7 @@
 // -----------------------------
 
 .menusections {
-	background-color: @menusections__bg-color;
+	background-color: @color__menusections--background;
 }
 
 
@@ -18,31 +18,32 @@
 // -----------------------------
 
 .widget__menu {
-	background-color: @menu__bg-color;
+	padding: @value__widget--spacing;
+	background-color: @color__menu--background;
 
 	// Header
 	.section-header {
-		margin-bottom: @widget__spacing;
+		margin-bottom: @value__widget--spacing;
 	}
 
 	// Menu Item
 	.menu-item {
-		background-color: @menu__item-bg-color;
+		background-color: @color__menu-item--background;
 	}
 	.item-content {
 		margin: 0;
-		padding: @widget__spacing @widget__spacing;
+		padding: @value__widget--spacing @value__widget--spacing;
 	}
 }
 
 // Section Header
 .section-header {
-	background-color: @menu__section-header-bg-color;
+	background-color: @color__menu-section-header--background;
 }
 
 // Featued Section
 .menu-section--featured {
-	background-color: @menu__section-featured-bg-color;
+	background-color: @color__menu-section-featured--background;
 }
 
 

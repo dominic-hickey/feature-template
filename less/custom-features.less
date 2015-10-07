@@ -44,7 +44,7 @@
 
 .block--image,
 .block--parallax {
-    background-color: hsla(hue(@feature__overlay-color), saturation(@feature__overlay-color), lightness(@feature__overlay-color), @feature__overlay-opacity);
+    background-color: hsla(hue(@color__feature-content--background), saturation(@color__feature-content--background), lightness(@color__feature-content--background), @value__feature--opacity);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -55,7 +55,7 @@
 
 .block-background {
     height: 100%;
-    background-color: hsla(hue(@feature__overlay-color), saturation(@feature__overlay-color), lightness(@feature__overlay-color), @feature__overlay-opacity);
+    background-color: hsla(hue(@color__feature-content--background), saturation(@color__feature-content--background), lightness(@color__feature-content--background), @value__feature--opacity);
 }
 
 // Background Images
@@ -93,7 +93,7 @@
     // Selected Nav Item
     .navigation-item.active .item-name,
     .navigation-item .item-name:hover {
-        color: @nav__item-bg-color--selected!important;
+        color: @color__navigation-item--background--selected!important;
     }
 }
 
@@ -105,7 +105,7 @@
 // -----------------------------
 
 .template-header--sticky {
-    background: darken(@site__bg-color, 4%);
+    background: darken(@color__body--background, 4%);
 
     // Active Sticky Header
     &.sticky-active {

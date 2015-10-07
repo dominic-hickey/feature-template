@@ -3,7 +3,7 @@
 // -------------------------------------
 
 #tdk-toolbar {
-    display: none!important;
+    // display: none!important;
 }
 
 // -----------------------------
@@ -38,6 +38,7 @@
 @import "@{templateLocal}/less/color-variables.less";   // Variables
 @import "@{templateLocal}/less/custom-difm.less";       // Custom DIFM (Layouts)
 @import "@{templateLocal}/less/custom-features.less";   // Custom Features
+@import "@{templateLocal}/js/owl-carousel/owl.carousel.less";
 
 
 // Plugin Includes
@@ -71,23 +72,23 @@
 // -----------------------------
 
 body {
-    background-color: @site__bg-color;
+    background-color: @color__body--background;
 }
 
 // Site Canvas
 .site-content {
     position: relative;
     display: block;
-    width: @site__content-width;
+    width: @value__site-content--width;
     margin: 0 auto;
 }
 
 // Links
 a {
-    color: @link-color;
+    color: @color__link--text;
 
     &:hover {
-        color: darken(@link-color, 15%);
+        color: darken(@color__link--text, 15%);
     }
 }
 
@@ -96,15 +97,15 @@ a {
 // ----------
 
 .site-container {
-    max-width: @site__width;
+    max-width: @value__site--width;
 }
 
 // Main
 .main {
     position: relative;
     z-index: 7000;
-    background-color: @site__content-bg-color;
-    padding: @site__spacing 0;
+    background-color: @color__container--background;
+    padding: @value__site--spacing 0;
 }
 
 
@@ -127,7 +128,7 @@ a {
         .header-color .light!important;
 
         .company-link {
-            color: @heading-color;
+            color: @color__companyname--text;
         }
     }
 }
@@ -144,7 +145,7 @@ a {
     z-index: 8001;
     width: 100%;
     max-width: 100%;
-    padding: @header__spacing 0;
+    padding: @value__header--spacing 0;
 
     @media @tablet {
         padding-bottom: 0!important;
@@ -174,10 +175,10 @@ a {
 .template-footer {
     position: relative;
     z-index: 2;
-    padding: @footer__spacing 0;
+    padding: @value__footer--spacing 0;
 
     @media @mobile {
-        padding: @footer__spacing * 0.7 0;
+        padding: @value__footer--spacing * 0.7 0;
     }
 
     h1, h2, h3, h4, p {
@@ -197,7 +198,7 @@ a {
 .template-navigation {
     @media @tablet {
         margin-top: 20px;
-        border-top: 1px solid @nav__border-color;
+        border-top: 1px solid @color__navigation--border;
     }
 }
 
@@ -224,13 +225,13 @@ a {
 
         &:first-child {
             padding-top: 10px;
-            border-top: 1px solid @nav__border-color;
+            border-top: 1px solid @color__navigation--border;
         }
     }
 
     .item-name {
         padding-left: 30px;
-        color: @nav__text-color;
+        color: @color__navigation--text;
         text-transform: uppercase;
 
         @media @tablet {
@@ -238,7 +239,7 @@ a {
         }
 
         &:hover {
-            color: @nav__text-color--hover;
+            color: @color__navigation--text--hover;
         }
 
         &.item-name--parent {
@@ -247,7 +248,7 @@ a {
     }
 
     &.selected .item-name {
-        color: @nav__text-color--selected;
+        color: @color__navigation--text--selected;
     }
 
     &:last-child .item-name {
@@ -259,12 +260,12 @@ a {
 .navigation-item.folder .navigation-list {
     position: absolute;
     min-width: 150px;
-    background-color: @nav__list-bg-color;
+    background-color: @color__navigation-list--background;
 
     .navigation-item {
         display: block;
         width: 100%;
-        background-color: @site__bg-color;
+        background-color: @color__body--background;
     }
     .navigation-item--child {
         padding: 0 10px;
@@ -281,7 +282,7 @@ a {
     content: "";
     margin-left: 4px;
     border: 5px solid transparent;
-    border-top-color: @nav__text-color;
+    border-top-color: @color__navigation--text;
 }
 
 // Toggle Button
@@ -293,7 +294,7 @@ a {
         width: 100%;
         padding: 12px 0;
         background-color: transparent;
-        color: @heading-color;
+        color: @color__navigation--text;
         text-align: left;
         text-transform: uppercase;
 
@@ -327,6 +328,10 @@ a {
 // #Forms
 // -----------------------------
 
+.form {
+    background-color: @color__form--background;
+}
+
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -336,35 +341,49 @@ textarea,
     padding: 9px 12px;
 
     &:focus {
-        border-color: @brand-color;
+        border-color: @color__primary;
     }
 }
 
-// Contact, Sign Up Form
-.contactform,
-.signupform {
-    background-color: @form-bg-color;
+// Legend
+.legend {
+    width: 100%;
+    padding: 10px @value__widget--spacing;
+    background-color: @color__form-legend--background;
+    color: @color__form-legend--text;
+}
 
-    // Legend
-    .legend {
-        width: 100%;
-        background-color: @form-legend-bg-color;
-        color: @form-legend-text-color;
+// Form Body
+.form-body {
+    padding: @value__widget--spacing;
+}
+
+// Label
+.label {
+    color: @color__form-label--text;
+}
+
+// Input
+.input:focus {
+    border-color: @color__primary;
+}
+
+// Form Resets
+.product-actions {
+    .form {
+        padding: 0;
+        background-color: transparent;
     }
-
-    // Form Body
     .form-body {
+        padding: 0;
     }
-
-    // Label
-    .label {
-        color: @form-label-text-color;
+    .legend {
+        padding: 0;
+        background-color: transparent;
     }
-
-    // Input
-    .input:focus {
-        border-color: @brand-color;
-    }
+}
+.summary-form {
+    background-color: transparent;
 }
 
 

@@ -5,7 +5,7 @@
     "widgetVersion": 2,
     "tags": {},
     "templateType": "standard",
-    "pageTypes": ["home"],
+    "pageTypes": ["home", "scroll-jack", "sticky-header", "fullscreen-video", "parallax", "slider"],
     "images":[],
     "colorSwatches":
     {

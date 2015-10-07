@@ -59,7 +59,7 @@
 .feature {
     position: relative;
     z-index: 999;
-    background-color: @feature__bg-color;
+    // background-color: @color__feature--background;
 
     .background-image {
         height: 100%;
@@ -81,7 +81,7 @@
         height: 100%;
     }
     .headline {
-        color: @feature__headline-color;
+        color: @color__feature-headline--text;
         text-transform: uppercase;
 
         @media @tablet {
@@ -117,12 +117,12 @@
 
 // Image Title
 .image-title {
-    color: @image__title-color;
+    color: @color__image-title--text;
 }
 
 // Image Description
 .image-description {
-    color: @image__description-color;
+    color: @color__image-description--text;
 }
 
 
@@ -132,7 +132,7 @@
 // -----------------------------
 
 .gallery {
-    background-color: @gallery__bg-color;
+    background-color: @color__gallery--background;
 
     // Gallery List (3 column layout)
     .gallery-list {
@@ -191,7 +191,7 @@
         padding: 10px 15px;
         opacity: 0;
         transition: .5s;
-        background-color: fadeout(@gallery__overlay-bg-color, 50%);
+        background-color: fadeout(@color__gallery-caption--background, 50%);
 
         transform: rotateX(90deg);
         transform-origin: bottom;
@@ -202,12 +202,12 @@
 
     // Image Title
     .image-title {
-        color: @gallery__title-color;
+        color: @color__gallery-title--text;
     }
 
     // Image Description
     .image-description {
-        color: @gallery__description-color;
+        color: @color__gallery-description--text;
     }
 
 }
@@ -220,7 +220,7 @@
 // -----------------------------
 
 .responsiveslideshow {
-    background-color: @slideshow__bg-color;
+    background-color: @color__slideshow--background;
 
     // Image
     .image {
@@ -229,7 +229,7 @@
 
     // Image Title
     .image-title {
-        color: @slideshow__title-color;
+        color: @color__slideshow-title--text;
     }
 
     // Image Description
@@ -239,19 +239,19 @@
 
     // Caption
     .caption {
-        background-color: hsla(hue(@slideshow__overlay-bg-color), saturation(@slideshow__overlay-bg-color), lightness(@slideshow__overlay-bg-color), 0.6);
+        background-color: hsla(hue(@color__slideshow-caption--background), saturation(@color__slideshow-caption--background), lightness(@color__slideshow-caption--background), 0.6);
     }
 
     // Pagination
     .pagination-item {
         .button {
-            background-color: @slideshow__pagination-item-bg-color;
-            color: @slideshow__pagination-text-color;
+            background-color: @color__slideshow-pagination-item--background;
+            color: @color__slideshow-pagination-item--text;
         }
     }
     // Selected
     .pagination-item.selected .button {
-        background-color: @slideshow__pagination-item-bg-color--selected;
+        background-color: @color__slideshow-pagination-item--background--selected;
     }
 
 }
@@ -264,7 +264,7 @@
 // -----------------------------
 
 .social-link {
-    color: @social-icons__bg-color;
+    color: @color__socialicons--icon--background;
 }
 
 
@@ -275,13 +275,14 @@
 // -----------------------------
 
 .twitter {
-    background-color: @twitter-bg-color;
+    padding: @value__widget--spacing;
+    background-color: @color__twitter--background;
 }
 
 // Tweet Item
 .tweet-item {
-    padding: @widget-spacing;
-    background-color: @twitter-item-bg-color;
+    padding: @value__widget--spacing;
+    background-color: @color__twitter-item--background;
 
     // Avatar / Wrap
     .avatar, .tweet-wrap {
@@ -306,7 +307,7 @@
         }
     }
     .account-name {
-        color: @twitter-accountname-color;
+        color: @color__twitter-account-name--background;
     }
 
     // Tweet Text Content
