@@ -1,0 +1,154 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--gallery">
+	<div class="site-container">
+
+		{% include "includes/header.twig" %}
+
+		<div class="main">
+			<div class="site-content">
+
+				<!-- Masonry Gallery -->
+				<ul class="gallery-list">
+				    <li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/1.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image One</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/2.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Two</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/3.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Three</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/4.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Four</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/5.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Five</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/6.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Six</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/7.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Seven</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/8.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Eight</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+					<li class="gallery-item">
+					    <figure class="figure">
+					        <a class="image-link" href="http://www.basekit.com" target="_blank">
+					        	<img class="image" src="{{asset('images/gallery/9.jpg')}}">
+					        </a>
+					        <figcaption class="caption">
+					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
+					            	<span class="image-title">Image Nine</span>
+					            </a>
+					        </figcaption>
+					    </figure>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		{% include "includes/footer.twig" %}
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Images Loaded -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script> -->
+	<script src="{{asset('js/gallery/imagesLoaded.js')}}"></script>
+
+	<!-- Masonry -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script> -->
+	<script src="{{asset('js/gallery/masonry.js')}}"></script>
+
+	<script>
+		var container = document.querySelector('.gallery-list');
+		imagesLoaded( container, function() {
+			var msnry = new Masonry( container, {
+				itemSelector: '.gallery-item'
+			});
+		});
+	</script>
+
+{% endblock %}

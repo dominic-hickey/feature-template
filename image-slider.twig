@@ -1,0 +1,111 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page  page--slider">
+	<div class="site-container">
+
+		{% include "includes/header.twig" %}
+
+		{# {{widget('feature', 'feature', {
+		  'header': 'profile',
+		  'strapline': 'profile',
+		  'defaultBgImg': asset('images/parallax-image.jpg'),
+		  'positionTopPercentage': '100',
+		  'showBtn': true,
+		  'buttonText': 'Button',
+		  'action': 'external',
+		  'url': 'http://docs.basekit.com',
+		  'target': '_blank'
+		})|raw}} #}
+
+		<div class="main">
+			<div class="site-content">
+
+				<!-- Content Slider -->
+				<div class="image-slider">
+					<ul id="lightSlider">
+				        <li data-thumb="{{asset('images/gallery/1.jpg')}}" class="atmosphere-bg  atmosphere-bg--1">
+				        	<p>Atmosphere 1</p>
+				            <img src="{{asset('images/gallery/1.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/4.jpg')}}" class="atmosphere-bg  atmosphere-bg--2">
+				        	<p>Atmosphere 2</p>
+				            <img src="{{asset('images/gallery/4.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/5.jpg')}}" class="atmosphere-bg  atmosphere-bg--3">
+				        	<p>Atmosphere 3</p>
+				            <img src="{{asset('images/gallery/5.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/7.jpg')}}" class="atmosphere-bg  atmosphere-bg--4">
+				        	<p>Atmosphere 4</p>
+				            <img src="{{asset('images/gallery/7.jpg')}}" alt="">
+				        </li>
+				         <li data-thumb="{{asset('images/gallery/1.jpg')}}" class="atmosphere-bg  atmosphere-bg--5">
+				         	<p>Atmosphere 5</p>
+				            <img src="{{asset('images/gallery/1.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/4.jpg')}}" class="atmosphere-bg  atmosphere-bg--6">
+				        	<p>Atmosphere 6</p>
+				            <img src="{{asset('images/gallery/4.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/5.jpg')}}" class="atmosphere-bg  atmosphere-bg--1">
+				        	<p>Any content can go here.</p>
+				            <img src="{{asset('images/gallery/5.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/7.jpg')}}" class="atmosphere-bg  atmosphere-bg--2">
+				        	<p>Content can also go here.</p>
+				            <img src="{{asset('images/gallery/7.jpg')}}" alt="">
+				        </li>
+				         <li data-thumb="{{asset('images/gallery/1.jpg')}}" class="atmosphere-bg  atmosphere-bg--3">
+				         	<p>Any content can go here.</p>
+				            <img src="{{asset('images/gallery/1.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/4.jpg')}}" class="atmosphere-bg  atmosphere-bg--4">
+				        	<p>Content can also go here.</p>
+				            <img src="{{asset('images/gallery/4.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/5.jpg')}}" class="atmosphere-bg  atmosphere-bg--5">
+				        	<p>Any content can go here.</p>
+				            <img src="{{asset('images/gallery/5.jpg')}}" alt="">
+				        </li>
+				        <li data-thumb="{{asset('images/gallery/7.jpg')}}" class="atmosphere-bg  atmosphere-bg--6">
+				        	<p>Content can also go here.</p>
+				            <img src="{{asset('images/gallery/7.jpg')}}" alt="">
+				        </li>
+				    </ul>
+				</div>
+
+				<p>LightSlider documentation <a href="http://sachinchoolur.github.io/lightslider/" target="_blank">here</a>.</p>
+
+			</div>
+		</div>
+
+		{% include "includes/footer.twig" %}
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Image Slider Scripts -->
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	<script src="{{asset('/js/jquery.1.11.0.js')}}"></script>
+	<script src="{{asset('/js/image-slider/lightslider.js')}}"></script>
+	<script type="text/javascript">
+		$('#lightSlider').lightSlider({
+		    gallery: true,
+		    item: 1,
+		    loop: true,
+		    slideMargin: 0,
+		    thumbItem: 9,
+		    auto: true,
+		    mode: 'fade',
+		    speed: 1000,
+		    pause: 4000
+		});
+	</script>
+
+{% endblock %}

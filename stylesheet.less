@@ -51,6 +51,7 @@
 
 @import "@{templateLocal}/js/fullPage/jquery.fullPage.less";  // Fullpage (Scroll Jack)
 @import "@{templateLocal}/js/owl-carousel/owl.carousel.less"; // Owl Carousel (Slider)
+@import "@{templateLocal}/js/image-slider/lightSlider.less";  // LightSlider (Image Slider)
 
 
 
@@ -59,8 +60,20 @@
 // #Mixins
 // -----------------------------
 
-// Variable Media Queries
-@desktop: ~"only screen and (max-width: 1024px)";
+// Transition
+.transition (@prop: all 0.5s ease) {
+    -webkit-transition: @prop;
+    -moz-transition:    @prop;
+    -ms-transition:     @prop;
+    -o-transition:      @prop;
+}
+
+// Transform
+.transform ( @transform: scale(1) ) {
+    -webkit-transform: @transform;
+    -ms-transform: @transform;
+    transform: @transform;
+}
 
 
 

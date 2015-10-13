@@ -128,89 +128,211 @@
 
 
 // -----------------------------
-// #Gallery
+// #Masonry Gallery
 // -----------------------------
 
-.gallery {
-    background-color: @color__gallery--background;
-
-    // Gallery List (3 column layout)
-    .gallery-list {
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-
-    // Figure
-    .figure {
-        position: relative;
-        perspective-origin: bottom;
-        perspective: 1000px;
-
-        &:hover .caption {
-            opacity: 1;
-            transform: rotateX(0deg);
-        }
-    }
-
-    // Gallery Item
+.page--gallery {
     .gallery-item {
-        overflow: hidden;
-    }
 
-    // Image Link
-    .image-link {
-        display: block;
-        height: 280px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        // Gallery List Items
+        float: left;
+        padding: 0 12px 24px;
+        height: auto;
+        width: 33.33%;
 
         @media @tablet {
-            height: 210px;
+            width: 50%;
+        }
+        @media @mobile {
+            padding: 0 0 24px;
+            width: 100%;
+        }
+        img {
+            -webkit-filter: grayscale(0%);
+            .transition(all 0.5s ease-in-out);
+        }
+        &:hover {
+            .image {
+                background-blend-mode: multiply;
+                opacity: 0.25;
+                -webkit-filter: grayscale(100%);
+            }
+            .image-link {
+                background-color: @color-swatch4;
+                text-decoration: none;
+            }
+            .caption {
+                height: 100%;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                .transform(scale(0.85));
+                visibility: visible;
+
+                .caption-link {
+                    height: 100%;
+                }
+            }
+        }
+
+        // Gallery Anchor Link
+        .image-link {
+            background-image: none!important;
+            height: auto;
+            .transition(all 0.5s ease-in-out);
+
+            @media @mobile {
+                margin-right: 0;
+            }
+            &:hover {
+                background-color: @color-swatch4;
+            }
+        }
+
+        // Gallery Inline Image
+        .image {
+            display: block;
+            max-width: 100%;
+        }
+    }
+    .figure {
+        margin: 0;
+        .transform(scale(1));
+        .transition(all 0.5s ease-in-out);
+        &:hover {
+            .transform(scale(1.05));
         }
     }
 
-    // Image
-    .image {
-        display: none;
-    }
-
-    // Captions
+    // Image Captions
     .caption {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        background-color: transparent;
+        position: relative;
+        display: block;
+        height: 0;
         margin: 0;
-        padding: 10px 15px;
+        padding: 0;
         opacity: 0;
-        transition: .5s;
-        background-color: fadeout(@color__gallery-caption--background, 50%);
-
-        transform: rotateX(90deg);
-        transform-origin: bottom;
+        text-align: center;
+        -webkit-transform: scale(0.85);
+            -ms-transform: scale(0.85);
+                transform: scale(0.85);
+        width: 100%;
+        visibility: hidden;
+        .transition(all 0.5s ease-in-out);
+        @media @mobile {
+            left: 0;
+        }
     }
     .caption-link {
-        text-decoration: none;
+        display: flex;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
-    // Image Title
     .image-title {
-        color: @color__gallery-title--text;
+        color: white;
+        text-transform: uppercase;
+        font-family: @font-swatch4-font-family;
+        letter-spacing: 1px;
+        font-size: 15px;
+        border: 2px solid rgba(255,255,255, 0.3);
+        display: inline-block;
+        padding: 6px 12px 5px;
     }
-
-    // Image Description
     .image-description {
-        color: @color__gallery-description--text;
+        display: none;
     }
-
 }
+
+// .gallery {
+//     background-color: @color__gallery--background;
+
+//     // Gallery List (3 column layout)
+//     .gallery-list {
+//         display: -webkit-box;
+//         display: -moz-box;
+//         display: -ms-flexbox;
+//         display: -webkit-flex;
+//         display: flex;
+//         -webkit-flex-wrap: wrap;
+//         -ms-flex-wrap: wrap;
+//         flex-wrap: wrap;
+//     }
+
+//     // Figure
+//     .figure {
+//         position: relative;
+//         perspective-origin: bottom;
+//         perspective: 1000px;
+
+//         &:hover .caption {
+//             opacity: 1;
+//             transform: rotateX(0deg);
+//         }
+//     }
+
+//     // Gallery Item
+//     .gallery-item {
+//         overflow: hidden;
+//     }
+
+//     // Image Link
+//     .image-link {
+//         display: block;
+//         height: 280px;
+//         background-repeat: no-repeat;
+//         background-position: center;
+//         background-size: cover;
+
+//         @media @tablet {
+//             height: 210px;
+//         }
+//     }
+
+//     // Image
+//     .image {
+//         display: none;
+//     }
+
+//     // Captions
+//     .caption {
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//         margin: 0;
+//         padding: 10px 15px;
+//         opacity: 0;
+//         transition: .5s;
+//         background-color: fadeout(@color__gallery-caption--background, 50%);
+
+//         transform: rotateX(90deg);
+//         transform-origin: bottom;
+//     }
+//     .caption-link {
+//         text-decoration: none;
+//     }
+
+//     // Image Title
+//     .image-title {
+//         color: @color__gallery-title--text;
+//     }
+
+//     // Image Description
+//     .image-description {
+//         color: @color__gallery-description--text;
+//     }
+
+// }
 
 
 
