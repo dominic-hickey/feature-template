@@ -108,13 +108,10 @@ function onYouTubePlayerAPIReady() {
 			onError                : function (player) {}
 		},
 		controls       : {
-			play  : "P",
-			pause : "p",
-			mute  : "M",
-			unmute: "A",
-			onlyYT: "O",
-			showSite: "R",
-			ytLogo: "Y"
+			play  : "<i></i>",
+			pause : "<span></span>",
+			mute  : "<i></i>",
+			unmute: "<span></span>"
 		},
 		rasterImg      : "images/raster.png",
 		rasterImgRetina: "images/raster@2x.png",
@@ -892,6 +889,7 @@ function onYouTubePlayerAPIReady() {
 					jQuery(YTPlayer).pauseYTP();
 				else
 					jQuery(YTPlayer).playYTP();
+
 			});
 
 			var MuteUnmute = jQuery("<span>" + jQuery.mbYTPlayer.controls.mute + "</span>").addClass("mb_YTVPMuteUnmute ytpicon").click(function () {

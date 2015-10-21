@@ -1,98 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.twig" %}
+{% block content %}
 
-	<head>
-		<title>{{page.title}}</title>
+<div class="page  page--fullscreen-video">
+	<div class="site-container">
 
-		<meta charset=utf-8>
-		<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+		<!-- Container for video, used to make video 100% of screen height -->
+		<div class="video-container  full">
 
-		<!-- Favicon -->
-		{% include basekit.headScript %}
-    </head>
+			<!-- Optional content overlay, these can be hidden in the editor or deleted from this file -->
+			<header class="video-heading">
 
-	<body>
+				<!-- Heading text -->
+				{{widget('content', 'feature-content', {
+					content: '<h1>This is a heading</h1><p>This is a subtitle</p>',
+				})|raw}}
 
-		<!-- BEGIN WELCOME -->
-		<div class="section-main" id="top">
-			<div class="title">
-				<a href="#top" class="scroll title-img"><h1 class="text-logo">Video Background!</h1></a><!-- Text logo, uncomment to use -->
-				<h1>Welcome!</h1>
-			</div>
+				<!-- Video button-->
+				{{widget('button', 'feature-button', {
+					'text': 'Lorum ipsum'
+				})|raw}}
+			</header>
+
+			<!-- This is the video -->
+			<a id="bgndVideo" class="player"></a>
 		</div>
-		<!-- END WELCOME -->
 
-		<!-- Background Video container -->
-		<a id="bgndVideo" class="player"></a>
-
-		{% include basekit.bodyScript %}
-
-		<!-- JAVASCRIPT -->
-		<script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
-
-			<!-- All set up / customisation variables for slideshow and video background etc. in custom.js file -->
-			<script type="text/javascript">
-				var slideshowBackgroundURLS = [
-					"{{asset('images/background1.jpg')}}",
-					"{{asset('images/background2.jpg')}}",
-					"{{asset('images/background3.jpg')}}",
-					"{{asset('images/background4.jpg')}}"
-				];
-
-				var slideshowFade = 1000;
-				var slideshowDuration = 4000;
+	</div>
+</div>
 
 
-				// ==== VIDEO BACKGROUND ====
-				// Enable Video Background - 'on' to enable, 'off' to disable
-				// Cannot work on mobile devices due to device restrictions, instead shows slideshow
-				// If disabled slideshow is shown
-				// Paste YouTube URL into the videoBackgronudURL variable - use YouTube link NOT embed code
-				// Set videoMuted to 'true' and background videos will be muted with no toggle mute button visible
-				// Set videoMuted to 'false' and videos will not be muted, and the toggle mute button will be visible on the site so users can turn off audio if they want
 
-				var videoBackground = 'on';
-				var videoBackgroundURL = 'http://www.youtube.com/watch?v=RIQqVqQs9Xs';
-				var videoMuted = true;
-			</script>
 
-		<script type="text/javascript" src="{{asset('js/jquery.backstretch.min.js')}}"></script>
-		<script type="text/javascript" src="{{asset('js/jquery.mb.YTPlayer.js')}}"></script>
-		<script type="text/javascript" src="{{asset('js/smoothscroll.js')}}"></script>
 
-		<script type="text/javascript">
-			$(document).ready(function(){
+<!-- Container -->
+<div class="container">
 
-				if(videoBackground == 'on') {			
-				    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-						$(".player").hide();
-						$.backstretch(slideshowBackgroundURLS, {
-			    	    	fade: slideshowFade,
-			    	   		duration: slideshowDuration
-			    		});
-					}
-					else {
-						$(".player").mb_YTPlayer({
-							videoURL: videoBackgroundURL,
-							containment: 'body',
-							autoPlay: true,
-							mute: videoMuted,
-							startAt:0,
-							opacity:1
-						});
-						
-						if(videoMuted == false) {
-							$('.videoMuteButton').show();
-						}
-					}
-				}
-				else {
-					$.backstretch(slideshowBackgroundURLS, {
-			    	    fade: slideshowFade,
-			    	    duration: slideshowDuration
-			    	});
-				}
-			});
-		</script>
-    </body>
-</html>
+	<!-- Page Content -->
+	<section class="template-content">
+
+		<!-- Main Widget Zone -->
+	   	{{zone('main')|raw}}
+
+	</section>
+</div>
+
+{% include "includes/footer.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Fullscreen video plugin scripts -->
+	<script src="{{asset('plugins/fullscreen-video/js/fullscreen-video.js')}}"></script>
+
+	<!-- Backstretch plugin for the mobile slideshow -->
+	<script src="{{asset('plugins/fullscreen-video/js/jquery.backstretch.min.js')}}"></script>
+
+	<!-- YouTube player plugin that makes it all work -->
+	<script src="{{asset('plugins/fullscreen-video/js/jquery.mb.YTPlayer.js')}}"></script>
+
+{% endblock %}

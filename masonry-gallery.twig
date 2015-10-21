@@ -15,7 +15,7 @@
 				    <li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/1.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/1.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -27,7 +27,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/2.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/2.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -39,7 +39,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/3.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/3.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -51,7 +51,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/4.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/4.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -63,7 +63,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/5.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/5.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -75,7 +75,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/6.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/6.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -87,7 +87,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/7.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/7.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -99,7 +99,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/8.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/8.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -111,7 +111,7 @@
 					<li class="gallery-item">
 					    <figure class="figure">
 					        <a class="image-link" href="http://www.basekit.com" target="_blank">
-					        	<img class="image" src="{{asset('images/gallery/9.jpg')}}">
+					        	<img class="image" src="{{asset('plugins/masonry-gallery/images/9.jpg')}}">
 					        </a>
 					        <figcaption class="caption">
 					            <a class="caption-link" href="http://www.basekit.com" target="_blank">
@@ -134,14 +134,9 @@
 
 {% block scripts %}
 
-	<!-- Images Loaded -->
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script> -->
-	<script src="{{asset('js/gallery/imagesLoaded.js')}}"></script>
-
-	<!-- Masonry -->
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script> -->
-	<script src="{{asset('js/gallery/masonry.js')}}"></script>
-
+	<!-- Masonry Scripts -->
+	<script src="{{asset('plugins/masonry-gallery/js/imagesLoaded.js')}}"></script>
+	<script src="{{asset('plugins/masonry-gallery/js/masonry.js')}}"></script>
 	<script>
 		var container = document.querySelector('.gallery-list');
 		imagesLoaded( container, function() {
