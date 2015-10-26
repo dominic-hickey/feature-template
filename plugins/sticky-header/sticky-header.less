@@ -1,0 +1,20 @@
+// ----------------------------------------
+// Feature Template: LESS > Sticky Header
+// ----------------------------------------
+
+// -----------------------------
+// #Sticky Header
+// -----------------------------
+
+// Inherits styles from '.template-header'
+.template-header--sticky {
+    background: darken(@color__body--background, 4%);
+
+    // Active Sticky Header
+    &.sticky-active {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+}

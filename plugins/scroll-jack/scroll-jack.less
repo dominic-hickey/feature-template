@@ -1,11 +1,48 @@
-/**
- * fullPage 2.6.6
- * https://github.com/alvarotrigo/fullPage.js
- * MIT licensed
- *
- * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
- * Contribution by Jhony0311
- */
+// ------------------------------------
+// Feature Template: LESS > Scroll Jack
+// ------------------------------------
+
+
+// -----------------------------
+// #Scroll Jack
+// -----------------------------
+
+.page--scroll-jack {
+    .block-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+// Scroll Jack Header
+.template-header--scroll-jack {
+    position: absolute!important;
+    box-shadow: 0 0 3px 4px rgba(110,110,110,0.1);
+
+    // Selected Nav Item
+    .navigation-item.active .item-name,
+    .navigation-item .item-name:hover {
+        color: @color__navigation-item--background--selected!important;
+    }
+}
+
+
+
+
+// ---------------------------
+// #Default Scroll Jack Styles
+// ---------------------------
+
+// These are the base styles for the plugin
+
+// fullPage 2.6.6
+// https://github.com/alvarotrigo/fullPage.js
+// MIT licensed
+// Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+// Contribution by Jhony0311
+
 html.fp-enabled,
 .fp-enabled body {
     margin: 0;

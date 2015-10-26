@@ -20,18 +20,9 @@
 // 1. LESS Includes
 // -----------------------------
 
-
-// BK LESS Framework Include
-// -------------------------
-
-@import "@{templateCommon}/bk-less-framework.less";
-
-
-// Template Includes
-// -----------------
-
-@import "@{templateLocal}/less/widgets.less";           // Widgets
-@import "@{templateLocal}/less/color-variables.less";   // Variables
+@import "@{templateCommon}/bk-less-framework.less";    // BK LESS Framework Include
+@import "@{templateLocal}/less/widgets.less";          // Widgets
+@import "@{templateLocal}/less/color-variables.less";  // Variables
 
 
 // Plugin Includes
@@ -45,13 +36,13 @@
 // DIFM Includes
 // -------------
 
-@import "@{templateLocal}/less/custom-difm.less";      // Custom DIFM (Layouts)
-@import "@{templateLocal}/less/custom-features.less";  // Custom Features
+@import "@{templateLocal}/less/custom-difm.less";  // Custom DIFM (Layouts)
 
-@import "@{templateLocal}/plugins/fullPage/jquery.fullPage.less";       // Fullpage (Scroll Jack)
-@import "@{templateLocal}/plugins/owl-carousel/owl.carousel.less";      // Owl Carousel (Slider)
-@import "@{templateLocal}/plugins/image-slider/less/lightSlider.less";  // LightSlider (Image Slider)
-@import "@{templateLocal}/plugins/fullscreen-video/less/video.less";    // Fullscreen Video
+@import "@{templateLocal}/plugins/sticky-header/sticky-header.less";  // Sticky header
+@import "@{templateLocal}/plugins/scroll-jack/scroll-jack.less";  // Scroll Jack
+@import "@{templateLocal}/plugins/slider/slider.less";  // Slider
+@import "@{templateLocal}/plugins/image-slider/image-slider.less";  // Image Slider
+@import "@{templateLocal}/plugins/fullscreen-video/less/fullscreen-video.less";  // Fullscreen Video
 
 
 
@@ -142,6 +133,70 @@ a {
             color: @color__companyname--text;
         }
     }
+}
+
+
+// Blocks
+// ----------
+
+// Used for 'parallax', 'scroll-jack' and 'fullscreen-video' demos
+
+.block,
+.block--scroll-jack {
+
+    // Center content
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+
+    h1, h2, h3, h4, p {
+        margin-bottom: 20px;
+    }
+}
+
+// Block Wrapper
+.block-wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+
+// Image Blocks
+// ------------
+
+.block--image,
+.block--parallax {
+    background-color: hsla(hue(@color__feature-content--background), saturation(@color__feature-content--background), lightness(@color__feature-content--background), @value__feature--opacity);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1, h2, h3, h4, p {
+        color: @feature__strapline-color;
+    }
+}
+
+
+// Block Backgrounds
+.block-background {
+    height: 100%;
+    background-color: hsla(hue(@color__feature-content--background), saturation(@color__feature-content--background), lightness(@color__feature-content--background), @value__feature--opacity);
+}
+
+// Background Images
+.image--bakery {
+    background-image: image('/images/parallax-image.jpg');
+}
+.image--dishes {
+    background-image: image('/images/parallax-image1.jpg');
+}
+.image--steak {
+    background-image: image('/images/parallax-image2.jpg');
 }
 
 
@@ -396,12 +451,3 @@ textarea,
 .summary-form {
     background-color: transparent;
 }
-
-
-
-
-
-
-
-
-
